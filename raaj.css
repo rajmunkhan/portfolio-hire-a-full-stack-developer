@@ -1,0 +1,603 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", Arial, sans-serif;;
+}
+.card-section{
+    display: flex;
+    background-color: #1a1e2b;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.card-section::before{
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:linear-gradient(to bottom, black, white) ;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: cardbefore 5s infinite ease alternate-reverse;
+}
+.card-section::after{
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background:linear-gradient(to bottom, rgb(255, 255, 255), rgb(0, 0, 0)) ;
+    border-radius: 50%;
+    animation: cardafter 5s infinite ease alternate-reverse;
+    transition: 2s;
+    opacity: 0.5;
+}
+@keyframes cardbefore {
+    from{
+        transform: scale(1,1);
+    }
+    to{
+        transform: scale(2,2);
+    }
+}
+@keyframes cardafter {
+    from{
+        transform: scale(2,2);
+    }
+    to{
+        transform: scale(1,1);
+    }
+}
+
+.card-section .card{
+    position: relative;
+    width: 213px;
+    height: 50vh;
+    padding: 50px;
+    margin: 50px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 20px 20px 50px rgba(0,0,0, 1.2);
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.card-section img{
+    
+    width: 80px;
+    margin: 20px 0px;
+}
+.card-section i{
+    color: yellow;
+}
+.portfolio-img{
+    display: flex;
+    position: absolute;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+}
+.project-inside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.card-section h2{
+    font-size: 29px ;
+    color: white;
+    padding-bottom: 50px;
+}
+.card-h1{
+    position: absolute;
+    font-size: 150px;
+    top: -26px;
+    left: -6px;
+    color: rgb(255, 255, 255, 0.1) ;
+}
+.card-section p{
+    color: white;
+    margin: 20px 0px;
+}
+.card-section button{
+    border-radius: 15px;
+    padding: 10px 30px;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.card-section .card:hover .project-inside{
+    transform: translateY(0);
+    opacity: 1;
+}
+.card-section .card:hover .portfolio-img{
+    transform: translateY(-200px);
+    opacity: 0;
+}
+body{
+    background-color: rgb(241, 241, 241);
+}
+a{
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-white{
+    color: white;
+}
+.topsec{
+    background-color: #1a1e2b;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(216, 216, 216);
+    
+}
+.glow-text{
+    color: white;
+    text-shadow: 0 0 10px #697cbb,
+    0 0 20px #697cbb,
+    0 0 40px #697cbb,
+    0 0 80px #697cbb,
+    0 0 100px #697cbb;
+}
+.topsec i{
+    color: #ffffff;
+    padding: 0px 10px;
+    box-shadow: 0 0 30px #697cbb;
+}
+.social i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 44px;
+    width: 30px;
+    border-radius: 5px;
+    margin: 0px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.social i:hover{
+    background-color: white;
+    color: black;
+}
+.nobg{
+    background: none;
+}
+nav{
+    height: 75px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    display:inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+li a:hover{
+    transition: none;
+    color: rgb(129, 129, 129);
+}
+.social-res{
+    position: absolute;
+    display: flex;
+    display: none;
+    justify-content: center;
+}
+.social-res a{
+    
+    color: white;
+    margin-top: 25px;
+}
+.social-res i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 44px;
+    width: 35px;
+    border-radius: 5px;
+    margin: 0px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.social-res i:hover{
+    background-color: white;
+    color: black;
+}
+.burger{
+    display: none;
+    position: absolute;
+    left: 5%;
+}
+.burger div{
+    
+    height: 5px;
+    width: 25px;
+    background-color: #000000;
+    margin: 5px;
+}
+.burger:hover div{
+    cursor: pointer;
+    background-color: rgb(129, 129, 129);
+}
+
+.blogbtn{
+    padding: 15px 45px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+}
+.blogbtn::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0%;
+    opacity: 0.6;
+    background-color: white;
+    transition: 1s;
+    border-radius: 0 50% 50% 0;
+}
+.blogbtn:hover:before{
+    width: 180%;
+
+}
+.gitbtn{
+    padding: 15px 45px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 1s;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.gitbtn::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 0%;
+    width: 100%;
+    opacity: 0.3;
+    background-color: rgb(0, 0, 0);
+    transition: 1s;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+}
+.gitbtn:hover:before{
+    height: 180%;
+}
+.gitbtn:hover a{
+    color: white;
+}
+
+header{
+    background-image: url('img/header.png');
+    /* background-repeat: no-repeat, repeat; */
+    background-size: cover;
+    display: flex;
+    height: 800px;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+.header{
+    margin-left: 85px;
+    width: 600px;
+    height: 500px;
+}
+.header p{
+    color:white;
+    margin-bottom: 50px;
+    font-family: "Rubik",sans-serif;
+}
+.header h1{
+    font-family: "Rufina",serif;
+    font-size: 58px;
+    margin-bottom: 50px;
+    
+}
+.portfolio-h1{
+    display: block;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    border: 2px solid black;
+    animation: rotate 4s infinite alternate-reverse ease-in-out;
+}
+.portfolio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@keyframes rotate{
+    0%{
+        background-color: white;
+        color: black;
+        transform: rotateY(0deg);
+    }
+    50%{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        transform: rotateY(180deg);
+    }
+    
+    100%{
+        background-color: white;
+        color: black;
+        transform: rotateY(0deg);
+    }
+}
+
+.about{
+    background-color: white;
+    padding: 20px;
+}
+.about h1{
+    display: block;
+    width: 380px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    padding: 10px 0px;
+    color: black;
+    
+}
+.about h1::before{
+    content: attr(data-text);
+    position: absolute;
+
+    padding: 10px 0px;
+    width: 0;
+    text-align: center;
+    top: 0;
+    left: 0;
+    border-right:2px solid black ;
+    color: white;
+    background-color: black;
+    overflow: hidden;
+    animation: about 5s infinite alternate-reverse ease-in-out;
+}
+@keyframes about {
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+/* .about h1{
+    display: block;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    border: 2px solid black;
+    animation: rotate 4s infinite alternate-reverse ease-in-out;
+} */
+
+.about-me{
+    flex-direction: column;
+    width: 500px;
+    box-shadow: 3px 3px 5px #d2d2d2, -3px -3px 5px #d2d2d2;;
+    margin: 50px;
+    padding: 25px;
+}
+.skills{
+    width: 500px;
+    height: 500px;
+    
+    margin: 50px;
+}
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+
+td,th {
+border: 1px solid #ddd;
+padding: 15px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #000000;
+color: white;
+}
+.second-td{
+    width: 200px;
+}
+.experience{
+    height: 300px;
+    flex-direction: column;
+    color: white;
+    background-color: #1a1e2b;
+}
+.imgs{
+    height: 200px;
+    width: 60vw;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+.imgs img{
+    width: 200px;
+    height: 110px;
+    margin: 0px 10px;
+}
+.slide{
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 170%;
+    animation: 4s slide infinite alternate-reverse ease-in-out;
+}
+@keyframes slide{
+    from{
+        left: 10%;
+    }
+    to{
+        left: -20%;
+    }
+}
+@media screen and (max-width:360px) {
+    .portfolio-h1{
+        margin: 30px 0px;
+    }
+    body{
+        overflow-x:hidden;
+    }
+    html{
+        overflow-x:hidden;
+    }
+    .topsec{
+        display: none;
+    }
+    .social-res{
+        display:flex;
+        top: 40%;
+        left: 9%;
+    }
+    .ul{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        height: 92vh;
+        width: 50vw;
+        z-index: 2;
+        background-color: rgb(161, 161, 161);
+        transition: 1s;
+        transform:translateX(100%);
+    }
+    .navactive{
+        transform: translateX(0%);
+    }
+    .ul li{
+        padding: 20px 5px;
+        border-bottom: 1px solid white;
+
+    }
+    ul{
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav button{
+        top: 50vh;
+        left: 0;
+        /* margin: 50px 0px; */
+    }
+    .header h1 {
+        font-family: "Rufina",serif;
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    .header{
+        margin-left:21px ;
+    }
+    .about-me{
+        margin: 85px 0px;
+        width: 92vw;
+    }
+    table{
+        width: 92vw;
+    }
+    .port-card{
+        margin-top: 57px;
+    }
+    .imgs{
+        width: 90vw;
+    }
+    .slide{
+        width: 450%;
+    }
+    @keyframes slide{
+        from{
+            left: 10%;
+        }
+        to{
+            left: -200%;
+        }
+    }
+    .second-td{
+        width: 60px;
+    }
+    .burger{
+        display: inline-block;
+        left: 85%;
+    }
+    .about h1{
+        width: 286px;
+        font-size: 24px;
+        
+    }
+    .card-section .card{
+        margin: 5px 10px;
+        width:240px;
+    }
+
+}
+@media screen and (max-width:280px) {
+.about h1 {
+    width: 239px;
+    font-size: 20.1px;
+}
+}
