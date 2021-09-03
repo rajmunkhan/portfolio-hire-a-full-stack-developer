@@ -348,8 +348,11 @@ header{
     margin: auto;
     margin-top: 30px;
     text-align: center;
-    border: 2px solid black;
-    animation: rotate 4s infinite alternate-reverse ease-in-out;
+    text-transform: uppercase;
+    -webkit-box-reflect: below 0.5px linear-gradient(transparent, #000000);
+    letter-spacing: 5px;
+    font-size: 30px;
+    animation: tubelight 4s infinite alternate-reverse ease-in-out;
 }
 .portfolio{
     display: flex;
@@ -357,111 +360,127 @@ header{
     align-items: center;
     flex-wrap: wrap;
 }
-@keyframes rotate{
-    0%{
-        background-color: white;
-        color: black;
-        transform: rotateY(0deg);
+@keyframes tubelight{
+    0%,18%,20%,50.1%, 60%,65.1%,80%,90%,91%{
+        color: #2b566b;
+        text-shadow: none;
     }
-    50%{
-        background-color: rgb(0, 0, 0);
-        color: rgb(255, 255, 255);
-        transform: rotateY(180deg);
-    }
-    
-    100%{
-        background-color: white;
-        color: black;
-        transform: rotateY(0deg);
+    18.1%,20.1%,30%,50%,60.1%, 65%,80.1%,90%,92.1%,100%{
+        color: white;
+        
+        text-shadow: 0 0 10px #03bcf4, 
+        0 0 20px #03bcf4, 
+        0 0 40px #03bcf4, 
+        0 0 80px #03bcf4, 
+        0 0 100px #03bcf4;
+        
     }
 }
 
-.about{
-    background-color: white;
-    padding: 20px;
+.about-left{
+    margin: 30px;
+    box-shadow: 0px 2px 10px;
+    padding: 10px;
+    background-color: rgb(33, 25, 75,0.2);
 }
-.about h1{
-    display: block;
-    width: 380px;
-    margin: auto;
-    margin-top: 30px;
+.about-left h2{
     text-align: center;
-    position: relative;
-    padding: 10px 0px;
-    color: black;
-    
-}
-.about h1::before{
-    content: attr(data-text);
-    position: absolute;
-
-    padding: 10px 0px;
-    width: 0;
-    text-align: center;
-    top: 0;
-    left: 0;
-    border-right:2px solid black ;
-    color: white;
-    background-color: black;
-    overflow: hidden;
-    animation: about 5s infinite alternate-reverse ease-in-out;
-}
-@keyframes about {
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
-}
-/* .about h1{
-    display: block;
-    width: 300px;
-    margin: auto;
-    margin-top: 30px;
-    text-align: center;
-    border: 2px solid black;
-    animation: rotate 4s infinite alternate-reverse ease-in-out;
-} */
-
-.about-me{
-    flex-direction: column;
-    width: 500px;
-    box-shadow: 3px 3px 5px #d2d2d2, -3px -3px 5px #d2d2d2;;
-    margin: 50px;
-    padding: 25px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: tubelight 4s infinite alternate-reverse ease-in-out;
 }
 .skills{
-    width: 500px;
-    height: 500px;
-    
-    margin: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
-table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px solid black;
+.skill-meter{
+    margin: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:inset 2px 2px 30px rgba(0,0,0, 1.2);
+    background-color: #1a1e2b;
 }
-
-td,th {
-border: 1px solid #ddd;
-padding: 15px;
+.meter{
+    padding: 15px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
 }
-
-tr:nth-child(even){background-color: #f2f2f2;}
-
-tr:hover {background-color: #ddd;}
-
-th {
-padding-top: 12px;
-padding-bottom: 12px;
-text-align: left;
-background-color: #000000;
-color: white;
+.meter svg{
+    width: 106px;
+    height: 106px;
 }
-.second-td{
-    width: 200px;
+.meter svg circle{
+    width: 130px ;
+    stroke:green ;
+    stroke-width:16;
+    fill:none; 
+    transform: translate(5px,5px);
+    stroke-linecap: round;
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+}
+.html svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #353e5a;
+}
+.html svg circle:nth-child(2){
+    stroke-dashoffset:50;
+    stroke: #03bcf4;
+}
+.css svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #353e5a;
+}
+.css svg circle:nth-child(2){
+    stroke-dashoffset:80;
+    stroke: #03bcf4;
+}
+.js svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #353e5a;
+}
+.js svg circle:nth-child(2){
+    stroke-dashoffset:190;
+    stroke: #03bcf4;
+}
+.c svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #353e5a;
+}
+.c svg circle:nth-child(2){
+    stroke-dashoffset:90;
+    stroke: #03bcf4;
+}
+.cpp svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #353e5a;
+}
+.cpp svg circle:nth-child(2){
+    stroke-dashoffset:90;
+    stroke: #03bcf4;
+}
+.python svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #353e5a;
+}
+.python svg circle:nth-child(2){
+    stroke-dashoffset:130;
+    stroke: #03bcf4;
+}
+.about-right{
+    padding: 20px;
+    height: 100%;
+}
+.about-right img{
+    width: 300px;
 }
 .experience{
     height: 300px;
@@ -471,13 +490,12 @@ color: white;
 }
 .imgs{
     height: 200px;
-    width: 60vw;
+    width: 80%;
     background-color: white;
     position: relative;
     overflow: hidden;
 }
 .imgs img{
-    width: 200px;
     height: 110px;
     margin: 0px 10px;
 }
@@ -485,18 +503,22 @@ color: white;
     position: absolute;
     top: 25%;
     left: 0;
-    width: 170%;
-    animation: 4s slide infinite alternate-reverse ease-in-out;
+    width: 200%;
+    animation: 7s slide infinite alternate-reverse ease-in-out;
 }
 @keyframes slide{
     from{
         left: 10%;
     }
     to{
-        left: -20%;
+        left: -40%;
     }
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width:863px) {
+    .burger{
+        display: inline-block;
+        left: 85%;
+    }
     .portfolio-h1{
         margin: 30px 0px;
     }
@@ -510,16 +532,17 @@ color: white;
         display: none;
     }
     .social-res{
+        margin: 0px 10px;
         display:flex;
-        top: 40%;
-        left: 9%;
+        top: 218px;
+        left: auto;
     }
     .ul{
         display: inline-block;
         position: absolute;
         right: 0;
         top: 75px;
-        height: 92vh;
+        height: 80vh;
         width: 50vw;
         z-index: 2;
         background-color: rgb(161, 161, 161);
@@ -541,15 +564,17 @@ color: white;
     }
 
     nav button{
-        top: 50vh;
+        top: 42vh;
         left: 0;
-        /* margin: 50px 0px; */
     }
     .header h1 {
         font-family: "Rufina",serif;
         font-size: 48px;
         margin-bottom: 10px;
     }
+}
+@media screen and (max-width:360px) {
+    
     .header{
         margin-left:21px ;
     }
@@ -567,7 +592,7 @@ color: white;
         width: 90vw;
     }
     .slide{
-        width: 450%;
+        width: 750%;
     }
     @keyframes slide{
         from{
@@ -579,10 +604,6 @@ color: white;
     }
     .second-td{
         width: 60px;
-    }
-    .burger{
-        display: inline-block;
-        left: 85%;
     }
     .about h1{
         width: 286px;
