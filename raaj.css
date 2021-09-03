@@ -572,6 +572,30 @@ header{
         font-size: 48px;
         margin-bottom: 10px;
     }
+    .slide{
+        width: 265%;
+    }
+    @keyframes slide{
+        from{
+            left: 10%;
+        }
+        to{
+            left: -130%;
+        }
+    }
+}
+@media screen and (max-width:450px){
+    .slide{
+        width: 470%;
+    }
+    @keyframes slide{
+        from{
+            left: 10%;
+        }
+        to{
+            left: -350%;
+        }
+    }
 }
 @media screen and (max-width:360px) {
     
@@ -592,14 +616,14 @@ header{
         width: 90vw;
     }
     .slide{
-        width: 750%;
+        width: 485%;
     }
     @keyframes slide{
         from{
             left: 10%;
         }
         to{
-            left: -200%;
+            left: -350%;
         }
     }
     .second-td{
